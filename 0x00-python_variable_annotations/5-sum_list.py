@@ -5,7 +5,10 @@
     '''
 
 
-def sum_list(input_list: list[float]) -> float:
-    ''' This function takes a list of floats and returns their sum
-        '''
-    return sum(input_list)
+from typing import List
+
+
+def sum_list(input_list: List[float]) -> float:
+    '''Computes the sum of a list of floating-point numbers.
+    '''
+    return float(sum(input_list))
