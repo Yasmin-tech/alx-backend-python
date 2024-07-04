@@ -20,7 +20,5 @@ def zoom_array(lst: Sequence[Any], factor: Union[int, float] = 2) -> List[Any]:
 array = [12, 72, 91]
 
 zoom_2x = zoom_array(array)
-print(zoom_2x)
 
 zoom_3x = zoom_array(array, 3.0)
-print(zoom_3x)
