@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' Fix mypy
+''' Fix mypyin the following piece of code and apply any necessary changes.
     '''
 
 
@@ -7,7 +7,7 @@ from typing import Tuple, List, Any, Sequence, Union
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List[Any]:
-    ''' Fix mypy
+    ''' Fix mypy for the arrgument and return types of this function.
         '''
     # factor = int(factor)
     zoomed_in: List[Any] = [
