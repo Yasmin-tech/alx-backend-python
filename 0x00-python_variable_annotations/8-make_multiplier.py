@@ -10,7 +10,7 @@ from typing import Callable
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     ''' return the Callable function '''
-    def inner_function(multiplier: float) -> float:
+    def inner_function(x: float) -> float:
         ''' This is the function that should be returned '''
-        return float(multiplier * multiplier)
+        return float(multiplier * x)
     return inner_function
