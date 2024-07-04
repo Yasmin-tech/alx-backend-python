@@ -12,7 +12,7 @@ def zoom_array(lst: Tuple, factor: int = 2) -> List[Any]:
     # factor = int(factor)
     zoomed_in: List[Any] = [
         item for item in lst
-        for i in range(factor)
+        for i in range(int(factor))
     ]
     return zoomed_in
 
