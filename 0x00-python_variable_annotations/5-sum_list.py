@@ -6,7 +6,6 @@
 
 
 def sum_list(input_list: list[float]) -> float:
-    '''
-        This function takes a list of floats and returns their sum
+    ''' This function takes a list of floats and returns their sum
         '''
     return sum(input_list)
