@@ -12,5 +12,5 @@ def make_multiplier(multiplier: float) -> Callable[[float], float]:
     ''' return the Callable function '''
     def inner_function(multiplier: float) -> float:
         ''' This is the function that should be returned '''
-        return multiplier * multiplier
+        return float(multiplier * multiplier)
     return inner_function
