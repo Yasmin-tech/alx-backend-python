@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ''' This model contains the type-annotated function make_multiplier.
     It takes an argument multiplier and
-    return a function that squares the multiplier
+    return a function that squares the multiplier.
     '''
 
 
