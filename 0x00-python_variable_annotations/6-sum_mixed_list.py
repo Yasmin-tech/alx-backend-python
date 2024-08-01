@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ''' This model contains a type-annotated function sum_mixed_list:
     It takes a list mxd_lst of floats and integers as argument
-    returns their sum as a float.
+    returns their sum as a float
     '''
 
 
