@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ''' This model contains the type-annotated function floor:
     takes a float n as it argument
-    and return the floor
+    and return the its floor
     '''
 
 from math import floor as f
