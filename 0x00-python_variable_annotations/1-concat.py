@@ -7,6 +7,6 @@
 
 def concat(str1: str, str2: str) -> str:
     ''' return a concatenated string str1 + str2
-        str1 and str2 they should be a string type
+        and str1 and str2 they should be a string type
         '''
     return str1 + str2
