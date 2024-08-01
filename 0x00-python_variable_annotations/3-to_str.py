@@ -6,6 +6,6 @@
 
 
 def to_str(n: float) -> str:
-    ''' rwturn the string representation of the float
+    ''' return the string representation of the float
         '''
     return str(n)
