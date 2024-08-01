@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' This model contains some Defined and annotated variables
+''' This model contains some defined and annotated variables
     '''
 
 
