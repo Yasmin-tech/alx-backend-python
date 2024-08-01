@@ -4,8 +4,7 @@
     and returns their sum as a float
     '''
 
-
-def add(a: float, b: float) -> float:
+def add (a: float, b: float) -> float:
     ''' return the sum of a and b
         a and b they should be a float type
         '''
