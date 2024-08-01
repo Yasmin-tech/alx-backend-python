@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' Fix mypyin the following piece of code and apply any necessary changes.
+''' Fix mypyin the following piece of code and apply any necessary changes
     '''
 
 
