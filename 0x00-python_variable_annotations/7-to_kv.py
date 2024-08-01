@@ -13,4 +13,4 @@ from typing import Union, Tuple
 def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     '''Computes the sum of a list of floating-point numbers and integers.
     '''
-    return (k, float(v ** 2))
+    return k, float(v ** 2)
