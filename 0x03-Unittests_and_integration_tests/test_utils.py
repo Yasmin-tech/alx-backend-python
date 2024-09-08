@@ -6,9 +6,10 @@
 
 
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, PropertyMock
 from utils import access_nested_map
 from utils import get_json
+from utils import memoize
 from parameterized import parameterized
 
 
@@ -63,3 +64,40 @@ class TestGetJson(unittest.TestCase):
         mock_request_get.return_value = mock_response
         self.assertEqual(get_json(test_url), test_payload)
         mock_request_get.assert_called_once_with(test_url)
+
+
+class TestMemoize(unittest.TestCase):
+    """
+        Test cases for the function memoize
+        """
+    def test_memoize(self):
+        """
+            Test the functionality of the function memoize that work as
+            a decorator for instances property.
+            The property return value should be cached by memoize function
+            so the property name is only called once
+            """
+        class TestClass:
+
+            def a_method(self):
+                return 42
+
+            @memoize
+            def a_property(self):
+                return self.a_method()
+
+        # with patch("test_utils.TestMemoize.TestClass.a_method",
+        # new_callable=PropertyMock)
+        # as mock_TestClass_a_method:
+        with patch.object(TestClass, "a_method") as mock_TestClass_a_method:
+            mock_TestClass_a_method.return_value = 42
+            obj = TestClass()
+            value1 = obj.a_property
+            value2 = obj.a_property
+            self.assertEqual(value1, 42)
+            self.assertEqual(value2, 42)
+            mock_TestClass_a_method.assert_called_once()
+
+
+if __name__ == "__main__":
+    unittest.main()
