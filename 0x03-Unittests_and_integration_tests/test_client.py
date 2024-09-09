@@ -113,11 +113,22 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
                 cls.org_payload[0],
                 cls.repos_payload]
         mock_get_json.return_value = mock_response
+        cls.obj = GithubOrgClient("google")
 
     @classmethod
     def tearDownClass(cls):
         cls.get_patcher.stop()
 
     def test_public_repos(self):
-        obj = GithubOrgClient("google")
-        self.assertEqual(obj.public_repos(), self.expected_repos)
+        """ test GithubOrgClient.public_repos
+            return the correct output
+            """
+        self.assertEqual(self.obj.public_repos(), self.expected_repos)
+
+    def test_public_repos_with_license(self):
+        """ test GithubOrgClient.public_repos with license
+        returns the correct output
+        """
+        self.assertEqual(self.obj.public_repos(
+            license="apache-2.0"),
+            self.apache2_repos)
