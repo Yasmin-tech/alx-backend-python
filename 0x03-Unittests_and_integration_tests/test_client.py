@@ -4,9 +4,10 @@
 
 
 from client import GithubOrgClient
+from fixtures import TEST_PAYLOAD
 import unittest
-from unittest.mock import patch, PropertyMock
-from parameterized import parameterized
+from unittest.mock import patch, PropertyMock, MagicMock
+from parameterized import parameterized, parameterized_class
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -90,3 +91,33 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(
                 GithubOrgClient("test").has_license(license, license_key),
                 result)
+
+
+@parameterized_class([
+    {"org_payload": TEST_PAYLOAD[0],
+     "repos_payload": TEST_PAYLOAD[0][1],
+     "expected_repos": TEST_PAYLOAD[0][2],
+     "apache2_repos": TEST_PAYLOAD[0][3]}
+])
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """
+        An integration test for GithubOrgClient
+        """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.get_patcher = patch("requests.get")
+        mock_get_json = cls.get_patcher.start()
+        mock_response = MagicMock()
+        mock_response.json.side_effect = [
+                cls.org_payload[0],
+                cls.repos_payload]
+        mock_get_json.return_value = mock_response
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.get_patcher.stop()
+
+    def test_public_repos(self):
+        obj = GithubOrgClient("google")
+        self.assertEqual(obj.public_repos(), self.expected_repos)
