@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Unittest classes for the class client.GithubOrgClient
+""" Unittest classes for the class client.GithubOrgClient.
 """
 
 

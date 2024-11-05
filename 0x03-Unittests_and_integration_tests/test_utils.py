@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
-    Unittese cases to set the functionality of the function
-    <access_nested_map> in the utils model
+    Unittese cases to test the functionality of the function
+    <access_nested_map> in the utils model 
     '''
 
 
